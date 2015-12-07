@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter.messagebox import showinfo, showwarning, showerror
 from map import *
-from glob import Victory, Dead
+from glob import Victory, Death
 
 
 class Main():
