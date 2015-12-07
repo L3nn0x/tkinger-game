@@ -14,7 +14,7 @@ class   Entity:
     def move(self, pos, level):
         old = self.pos
         self.pos = tuple((x + y for x, y in zip(self.pos, pos)))
-        typ = level.type(self.pos)
+        typ = level.entity_type(self.pos)
         if typ == WALL or typ == GREENENNEMY:
             self.pos = pos
         elif typ == REDENNEMY:
