@@ -29,8 +29,7 @@ class Map(Canvas):
                     if self.perso == None:
                         self.perso = Perso(self, (i % self.w, i // self.w))
                     else:
-                        self.perso.pos = (i % self.w, i // self.w)
-                        self.perso.reset()
+                        self.perso.reset((i % self.w, i // self.w))
         for i in range(self.w):
             self.entities.append(Wall(self, (i, -1), 0))
             self.entities.append(Wall(self, (i, self.h), 0))

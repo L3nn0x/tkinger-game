@@ -8,6 +8,9 @@ class   Entity:
         self.screen = screen
         self.pos = pos
 
+    def reset(self):
+        self.img = self.screen.create_image(*tuple(map(lambda x: x*SIZE+CST, self.pos)), image=self.photo)
+
     def show(self):
         self.screen.coords(self.img, *tuple(map(lambda x: x*SIZE+CST, self.pos)))
 

@@ -35,7 +35,7 @@ class Main():
             filename = "niveau" + str(level) + ".txt"
             try:
                 self.map.load(filename)
-            except:
+            except AttributeError:
                 self.map = Map(self.win, filename, width=500, height=500)
                 self.map.pack()
                 self.map.focus_set()
@@ -45,7 +45,7 @@ class Main():
 
 	def update(self):
             try:
-                self.map.update(134) #frequence de rafraichissement
+                self.map.update(33) #frequence de rafraichissement
             except KeyError:
                 level = self.level + 1
                 showinfo("Youuuuu WIN ! Next level : " + str(level))
@@ -55,7 +55,7 @@ class Main():
                 exit(0)
 
             self.map.show()
-            self.win.after(134, self.update)
+            self.win.after(33, self.update)
 
 
 main = Main()

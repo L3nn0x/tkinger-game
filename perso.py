@@ -13,17 +13,19 @@ class   Perso(Entity):
         screen.bind("<Down>", lambda e: self.handleEvent(SOUTH))
         screen.bind("<KeyRelease>", lambda e: self.handleEvent((0, 0)))
 
-    def reset(self):
+    def reset(self, pos):
+        self.pos = pos
         self.speed = (0, 0)
         self.time = 0
         self.win = False
+        super().reset()
 
     def handleEvent(self, speed):
         self.speed = speed
 
     def update(self, dt, level):
         self.time += dt
-        if self.time >= 250:
+        if self.time >= 150:
             if self.win:
                 raise KeyError
             self.time = 0
