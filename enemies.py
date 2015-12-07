@@ -21,7 +21,7 @@ class Red(Entity):
             import random
             directions = [NORTH, SOUTH, WEST, EAST]
             typ = super().move(directions[random.randint(0, 3)], level)
-            while typ == WALL:
+            while typ == WALL or typ == PERSO:
                 if typ == PERSO:
                     raise ValueError
                 typ = super().move(directions[random.randint(0, 3)], level)
