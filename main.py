@@ -23,9 +23,9 @@ class Main():
             self.win.config(menu=self.menubar)
             self.new()
             #Dimensions
-            self.win.geometry('500x500')
-            self.win.minsize(width=500,height=500)
-            self.win.maxsize(width=500, height=500)
+            self.win.geometry(str(X)+'x'+str(Y))
+            self.win.minsize(width=X,height=Y)
+            self.win.maxsize(width=X, height=Y)
 
 	def run(self):
             self.update()
@@ -37,7 +37,7 @@ class Main():
             try:
                 self.map.load(filename)
             except AttributeError:
-                self.map = Map(self.win, filename, width=500, height=500)
+                self.map = Map(self.win, filename, width=X, height=Y)
                 self.map.pack()
                 self.map.focus_set()
             except FileNotFoundError:
