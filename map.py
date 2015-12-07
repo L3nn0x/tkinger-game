@@ -3,6 +3,7 @@ from tkinter import *
 from entity import *
 from enemies import *
 from perso import *
+import random
 
 class Map(Canvas):
     def __init__(self, parent, filename, *args, **kwargs):
@@ -11,6 +12,7 @@ class Map(Canvas):
         self.load(filename)
 
     def load(self, filename):
+        self.time = 0
         self.delete("all")
         self.entities = []
         with open(filename, "r") as f:
@@ -46,6 +48,26 @@ class Map(Canvas):
         for i in self.entities:
             i.update(dt, self)
         self.perso.update(dt, self)
+        self.time += dt
+        if self.time > 1000:
+            self.time = 0
+            if random.randint(0, 100) < 50:
+                self.addEnnemy()
+
+    def addEnnemy(self):
+        entity = None
+        poss = [i.pos for i in self.entities]
+        pos = (random.randint(0, self.w), random.randint(0, self.h))
+        while pos in poss:
+            pos = (random.randint(0, self.w), random.randint(0, self.h))
+        nbRed = len(list(filter(lambda e: isinstance(e, Red), self.entities)))
+        nbGreen = len(list(filter(lambda e: isinstance(e, Green), self.entities)))
+        if random.randint(0, 1) and nbRed < self.maxRed:
+            entity = Red(self, pos)
+        elif nbGreen < self.maxGreen:
+            entity = Green(self, pos)
+        if entity is not None:
+            self.entities.append(entity)
 
     def entity_type(self, coord):
         for i in self.entities:

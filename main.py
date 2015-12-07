@@ -48,10 +48,10 @@ class Main():
                 self.map.update(33) #frequence de rafraichissement
             except KeyError:
                 level = self.level + 1
-                showinfo("Youuuuu WIN ! Next level : " + str(level))
+                showinfo("THE Game", "Youuuuu WIN ! Next level : " + str(level))
                 self.new(level)
             except ValueError:
-                showerror("You're dead, bitch !")
+                showerror("THE Game", "You're dead, bitch !")
                 exit(0)
 
             self.map.show()

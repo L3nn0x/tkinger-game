@@ -20,11 +20,11 @@ class Red(Entity):
             self.time = 0
             import random
             directions = [NORTH, SOUTH, WEST, EAST]
-            typ = super().move(directions[random.randInt(0, 3)], level)
+            typ = super().move(directions[random.randint(0, 3)], level)
             while typ == WALL:
                 if typ == PERSO:
                     raise ValueError
-                typ = super().move(directions[random.randInt(0, 3)], level)
+                typ = super().move(directions[random.randint(0, 3)], level)
                             
 class Green(Entity):
     """docstring for green"""
