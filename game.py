@@ -30,7 +30,7 @@ class   Game(State):
         except Victory:
             self.changeLevel(self.level + 1)
             if not self.done:
-                self.machine.push_later(TextState(self.parent, self.machine, "Youuuuuuu WIN! Next level: " + str(self.level+1)))
+                self.machine.push_later(TextState(self.parent, self.machine, "Youuuuuuu WIN! Next level: " + str(self.level)))
         except Death:
             self.machine.push_later(TextState(self.parent, self.machine, "You're dead bitch!"))
             self.pop()
