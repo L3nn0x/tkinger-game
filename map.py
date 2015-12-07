@@ -37,5 +37,15 @@ class Map(Canvas):
     def entity_type(self, coord):
       for i in self.entities:
         if i.pos == coord:
-          return i
+          if isinstance(i, Wall): 
+            return WALL
+          elif isinstance(i, Red): 
+            return REDENNEMY
+          elif isinstance(i, Green): 
+            return GREENENNEMY
+          elif isinstance(i, Exit): 
+            return FINISH
+          elif isinstance(i, Perso):
+            return PERSO
+     return NOTHING
         
