@@ -3,7 +3,7 @@ import tkinter as tk
 
 class   Entity:
     def __init__(self, screen, filename, pos):
-        self.img = screen.create_image(tuple(map(lambda x: x*15, pos)), tk.PhotoImage(file=filename))
+        self.img = screen.create_image(tuple(map(lambda x: x*15, pos)), PhotoImage(file=filename))
         self.screen = screen
         self.pos = pos
         self.dead = False

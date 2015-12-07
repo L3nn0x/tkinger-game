@@ -31,5 +31,5 @@ class Green(Entity):
 class Exit(Entity):
     """docstring for Exit"""
     def __init__(self,screen,pos):
-        filename = "Images/exit.gif"
+        filename = "Images/Exit.gif"
         super().__init__(screen,filename,pos)
