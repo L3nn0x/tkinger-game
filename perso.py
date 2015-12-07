@@ -12,7 +12,6 @@ class   Perso(Entity):
         screen.bind("<Right>", lambda e: self.handleEvent(EAST))
         screen.bind("<Up>", lambda e: self.handleEvent(NORTH))
         screen.bind("<Down>", lambda e: self.handleEvent(SOUTH))
-        screen.bind("<KeyRelease>", lambda e: self.handleEvent((0, 0)))
 
     """Reset the player for the next level"""
     def reset(self, pos):
@@ -38,3 +37,4 @@ class   Perso(Entity):
                 self.win = True
             elif typ == REDENNEMY:
                 raise Death
+            self.speed = (0, 0)
