@@ -3,7 +3,7 @@ from entity import Entity
 
 class   Perso(Entity):
     def __init__(self, screen, pos):
-        super().__init__(screen, "perso.gif", pos)
+        super().__init__(screen, "Images/perso.gif", pos)
         self.speed = (0, 0)
         self.time = 0
         screen.bind("<Left>", lambda e: self.handleEvent(WEST))

@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter.messagebox import showinfo, showwarning, showerror
-from tkinter 
 from map import *
 
 
@@ -32,7 +31,7 @@ class Main():
 	
 	def new(self, level = 1):
 		self.level = level
-		filename = "niveau" + level + ".txt"
+		filename = "niveau" + str(level) + ".txt"
 		self.map = Map(self.win, filename, width=500, height=500)
 	
 	def about(self):
