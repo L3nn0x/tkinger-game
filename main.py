@@ -33,9 +33,12 @@ class Main():
 	def new(self, level = 1):
             self.level = level
             filename = "niveau" + str(level) + ".txt"
-            self.map = Map(self.win, filename, width=500, height=500)
-            self.map.pack()
-            self.map.focus_set()
+            try:
+                self.map.load(filename)
+            except:
+                self.map = Map(self.win, filename, width=500, height=500)
+                self.map.pack()
+                self.map.focus_set()
 	
 	def about(self):
 		showinfo('Information sur le programme','v0.1, PA10')
@@ -43,11 +46,11 @@ class Main():
 	def update(self):
             try:
                 self.map.update(134) #frequence de rafraichissement
-            except ValueError:
-                level = self.level + 1
-                showinfo("Youuuuu WIN ! Next level : " + level)
-                self.new(level)
             except KeyError:
+                level = self.level + 1
+                showinfo("Youuuuu WIN ! Next level : " + str(level))
+                self.new(level)
+            except ValueError:
                 showerror("You're dead, bitch !")
                 exit(0)
 
