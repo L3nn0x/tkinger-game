@@ -1,0 +1,10 @@
+WALL = 0
+REDENNEMY = 1
+GREENENNEMY = 2
+NOTHING = 3
+FINISH = 4
+
+NORTH = (0, -15)
+SOUTH = (0, 15)
+EAST = (15, 0)
+WEST = (-15, 0)
