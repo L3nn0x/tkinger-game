@@ -12,16 +12,20 @@ class Red(Entity):
     def __init__(self,screen,pos):
         filename = "Images/red.gif"
         super().__init__(screen,filename,pos)
+        self.time = 0
 
     def update(self,dt,level):
-        import random
-        directions = [NORTH, SOUTH, WEST, EAST]
-        typ = super().move(directions[random.randInt(0, 3)], level)
-        while typ == WALL:
-            if typ == PERSO:
-                raise ValueError
+        self.time += dt
+        if self.time > 250:
+            self.time = 0
+            import random
+            directions = [NORTH, SOUTH, WEST, EAST]
+            typ = super().move(directions[random.randInt(0, 3)], level)
+            while typ == WALL:
+                if typ == PERSO:
+                    raise ValueError
                 typ = super().move(directions[random.randInt(0, 3)], level)
-			
+                            
 class Green(Entity):
     """docstring for green"""
     def __init__(self,screen,pos):
