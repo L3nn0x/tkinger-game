@@ -37,7 +37,7 @@ class Main():
             self.machine.update(33)
             self.machine.show()
             if self.machine.isEmpty():
-                exit(0)
+                self.win.destroy()
             self.win.after(33, self.update)
 
 

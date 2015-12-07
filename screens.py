@@ -2,6 +2,7 @@ import tkinter as tk
 from state import State
 
 class   TextState(State):
+    """State to just print some text and return to the previous state once 2.5sec have passed or a key has been pressed"""
     def __init__(self, parent, machine, text):
         super().__init__(parent, machine)
         self.initUI(text)
@@ -18,6 +19,7 @@ class   TextState(State):
             self.pop()
 
 class   PauseState(TextState):
+    """The pause state with it's logic"""
     def __init__(self, parent, machine):
         text = """The game is paused!
         Press <Escape> to return to the menu.

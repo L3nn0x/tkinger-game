@@ -5,12 +5,14 @@ from glob import Victory, Death
 from screens import TextState, PauseState
 
 class   Game(State):
+    """The main state : the Game is run in this class"""
     def __init__(self, parent, machine, level = 1):
         super().__init__(parent, machine)
         self.changeLevel(level)
         self.done = False
         self.map.bind("<Escape>", lambda e: self.machine.push_later(PauseState(self.parent, self.machine)))
 
+    """The function to change the level"""
     def changeLevel(self, level):
         self.level = level
         filename = "Levels/niveau" + str(level) + ".txt"

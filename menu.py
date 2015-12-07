@@ -3,6 +3,7 @@ from state import State
 from game import Game
 
 class   Menu(State):
+    """The main menu with the two buttons"""
     def __init__(self, parent, machine):
         super().__init__(parent, machine)
         self.initUI()
