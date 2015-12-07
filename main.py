@@ -24,8 +24,6 @@ class Main():
             self.new()
             #Dimensions
             self.win.geometry(str(X)+'x'+str(Y))
-            self.win.minsize(width=X,height=Y)
-            self.win.maxsize(width=X, height=Y)
 
 	def run(self):
             self.update()
@@ -37,8 +35,8 @@ class Main():
             try:
                 self.map.load(filename)
             except AttributeError:
-                self.map = Map(self.win, filename, width=X, height=Y)
-                self.map.pack()
+                self.map = Map(self.win, filename)
+                self.map.pack(fill=BOTH, expand=YES)
                 self.map.focus_set()
             except FileNotFoundError:
                 showinfo("THE Game", "Youuuuu WIN ! No more level")

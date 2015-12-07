@@ -45,8 +45,8 @@ class Map(Canvas):        #Création de la classe Map, qui hérite de Canvas
             i.show()
         self.perso.show()
         pos = list(map(lambda x: x*SIZE+CST, self.perso.pos))
-        pos[0] = (pos[0] - X/2) / (self.w*SIZE+CST)
-        pos[1] = (pos[1] - Y/2) / (self.h*SIZE+CST)
+        pos[0] = (pos[0] - self.winfo_width()/2) / (self.w*SIZE+CST)
+        pos[1] = (pos[1] - self.winfo_height()/2) / (self.h*SIZE+CST)
         self.xview_moveto(pos[0])
         self.yview_moveto(pos[1])
 
