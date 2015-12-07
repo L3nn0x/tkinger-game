@@ -10,6 +10,7 @@ class   Perso(Entity):
         screen.bind("<Right>", lambda e: self.handleEvent(EAST))
         screen.bind("<Up>", lambda e: self.handleEvent(NORTH))
         screen.bind("<Down>", lambda e: self.handleEvent(SOUTH))
+        screen.bind("<KeyRelease>", lambda e: self.handleEvent((0, 0)))
 
     def handleEvent(self, speed):
         self.speed = speed
