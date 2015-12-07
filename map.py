@@ -38,11 +38,17 @@ class Map(Canvas):        #Création de la classe Map, qui hérite de Canvas
         for i in range(self.h):               #...
             self.entities.append(Wall(self, (-1, i), 0))
             self.entities.append(Wall(self, (self.w, i), 0))
+        self.config(scrollregion=(0, 0, self.w*SIZE+CST, self.h*SIZE+CST))
 
     def show(self):           #Boucle pour afficher toutes les entités
         for i in self.entities:
             i.show()
         self.perso.show()
+        pos = list(map(lambda x: x*SIZE+CST, self.perso.pos))
+        pos[0] = (pos[0] - self.winfo_width()/2) / (self.w*SIZE+CST)
+        pos[1] = (pos[1] - self.winfo_height()/2) / (self.h*SIZE+CST)
+        self.xview_moveto(pos[0])
+        self.yview_moveto(pos[1])
 
     def update(self, dt):   #Boucle pour mettre à jour les entités...
         for i in self.entities:
