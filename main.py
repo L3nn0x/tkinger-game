@@ -40,6 +40,9 @@ class Main():
                 self.map = Map(self.win, filename, width=500, height=500)
                 self.map.pack()
                 self.map.focus_set()
+            except FileNotFoundError:
+                showinfo("THE Game", "Youuuuu WIN ! No more level")
+                exit(0)
 	
 	def about(self):
 		showinfo('Information sur le programme','v0.1, PA10')
