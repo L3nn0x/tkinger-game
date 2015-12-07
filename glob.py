@@ -4,8 +4,10 @@ GREENENNEMY = 2
 NOTHING = 3
 FINISH = 4
 PERSO = 5
+X = 996
+Y = 864
 
-SIZE = 15
+SIZE = 32
 CST = 15
 NORTH = (0, -1)
 SOUTH = (0, 1)
