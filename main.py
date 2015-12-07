@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter.messagebox import showinfo, showwarning, showerror
 from map import *
+from glob import Victory, Dead
 
 
 class Main():
@@ -46,11 +47,11 @@ class Main():
 	def update(self):
             try:
                 self.map.update(33) #frequence de rafraichissement
-            except KeyError:
+            except Victory:
                 level = self.level + 1
                 showinfo("THE Game", "Youuuuu WIN ! Next level : " + str(level))
                 self.new(level)
-            except ValueError:
+            except Dead:
                 showerror("THE Game", "You're dead, bitch !")
                 exit(0)
 
