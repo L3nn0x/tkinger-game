@@ -54,7 +54,7 @@ class Main():
                 level = self.level + 1
                 showinfo("THE Game", "Youuuuu WIN ! Next level : " + str(level))
                 self.new(level)
-            except Dead:
+            except Death:
                 showerror("THE Game", "You're dead, bitch !")
                 exit(0)
 

@@ -15,5 +15,5 @@ WEST = (-1, 0)
 class   Victory(Exception):
     pass
 
-class   Dead(Exception):
+class   Death(Exception):
     pass

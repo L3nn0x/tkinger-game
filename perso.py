@@ -37,4 +37,4 @@ class   Perso(Entity):
             if typ == FINISH:
                 self.win = True
             elif typ == REDENNEMY:
-                raise Dead
+                raise Death
