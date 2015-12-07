@@ -32,7 +32,7 @@ class Main():
 	
 	def new(self, level = 1):
             self.level = level
-            filename = "niveau" + str(level) + ".txt"
+            filename = "Levels/niveau" + str(level) + ".txt"
             try:
                 self.map.load(filename)
             except AttributeError:
