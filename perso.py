@@ -28,7 +28,7 @@ class   Perso(Entity):
     """update the player position and status"""
     def update(self, dt, level):
         self.time += dt
-        if self.time >= 150:
+        if self.time >= 50:
             if self.win:
                 raise Victory
             self.time = 0

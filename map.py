@@ -55,7 +55,7 @@ class Map(Canvas):        #Création de la classe Map, qui hérite de Canvas
             i.update(dt, self)
         self.perso.update(dt, self) #...le perso
         self.time += dt
-        if self.time > 1000:        #Ajout aléatoire d'ennemis
+        if self.time > 250:        #Ajout aléatoire d'ennemis
             self.time = 0
             if random.randint(0, 100) < 50:
                 self.addEnnemy()

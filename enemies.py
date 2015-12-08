@@ -16,7 +16,7 @@ class Red(Entity):
 
     def update(self,dt,level):
         self.time += dt
-        if self.time > 250:
+        if self.time > 150:
             self.time = 0
             import random
             directions = [NORTH, SOUTH, WEST, EAST]

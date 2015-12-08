@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter.messagebox import showinfo, showwarning, showerror
 from state import Machine
 from menu import Menu as MenuState
-
+from glob import X, Y
 
 class Main():
 	def __init__(self):
@@ -24,7 +24,7 @@ class Main():
             self.machine = Machine(self.win)
             self.machine._push(MenuState(self.win, self.machine))
             #Dimensions
-            # self.win.geometry(str(X)+'x'+str(Y))
+            self.win.geometry(str(X)+'x'+str(Y))
 
 	def run(self):
             self.update()
