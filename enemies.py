@@ -23,7 +23,7 @@ class Red(Entity):
             typ = super().move(directions[random.randint(0, 3)], level)
             while typ == WALL or typ == PERSO:
                 if typ == PERSO:
-                    raise ValueError
+                    raise Death
                 typ = super().move(directions[random.randint(0, 3)], level)
                             
 class Green(Entity):
