@@ -19,6 +19,3 @@ class   Menu(State):
 
     def quit(self):
         self.pop()
-
-    def update(self, dt):
-        pass
